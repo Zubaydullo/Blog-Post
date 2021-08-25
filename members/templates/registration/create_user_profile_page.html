@@ -1,0 +1,22 @@
+{% extends 'theblog/base.html' %}
+
+{% block title %} Create a New Profile Page {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<h2>Create Profile Page...</h2>
+        <div class="form-group">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button class="btn btn-primary">Create Profile Page</button>
+        </form>
+    </div>
+
+
+{% else %}
+<p>Sorry, you are not authorized to create a profile page!</p>
+{% endif %}
+{% endblock %}

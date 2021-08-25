@@ -1,0 +1,21 @@
+{% extends 'theblog/base.html' %}
+
+{% block content %}
+{% if category_posts %}
+<h1>{{cats}}</h1>
+<ul>
+    {% for post in category_posts %}
+    <li><a href="{% url 'article_detail' post.pk %}">{{post.title}}</a> - {{ post.author.first_name }}
+        {{ post.author.last_name }} <br>
+        {% if user.is_authenticated %}
+        <a href="{% url 'update_post' post.id %}"><small>(Edit)</small></a>
+        <a href="{% url 'delete_post' post.id %}"><small>(Delete)</small></a><br>
+        {% endif %}
+        {{post.body|truncatechars:200|safe}}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Sorry, this page does not exists!</p>
+{% endif %}
+{% endblock %}

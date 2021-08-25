@@ -1,0 +1,23 @@
+{% extends 'theblog/base.html' %}
+
+{% block title %}Edit Profile Page {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if user.id == profile.user.id %}
+        <h2>Edit Profile Page...</h2>
+                <div class="form-group">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button class="btn btn-primary">Update profile</button>
+                </form>
+            </div>
+    {% else %}
+        <p>You are not the right person to edit the page.</p>
+    {% endif %}
+{% else %}
+<p>Sorry, you are not authorized to add a post!</p>
+{% endif %}
+{% endblock %}
