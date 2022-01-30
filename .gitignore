@@ -128,6 +128,6 @@ config/local_settings.py
 =======
 =======
 config/local_settings.py
-
+venv
 questions.docx
 
