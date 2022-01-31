@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-26$gl0i)a30m+ho8xs55abfqw*_-*#u7pw7x5^%of$qp+!580c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["192.168.100.149", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -73,6 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'simpleBlog.wsgi.application'
 
+AUTH_USER_MODEL = 'theblog.CustomUser'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
