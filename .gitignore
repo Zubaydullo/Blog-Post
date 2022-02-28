@@ -131,4 +131,4 @@ config/local_settings.py
 venv
 questions.docx
 
-media
+media/
