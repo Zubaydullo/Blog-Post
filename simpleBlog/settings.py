@@ -136,5 +136,5 @@ LOGOUT_REDIRECT_URL = '/'
 
 try:
     from .local_settings import *
-except: # noqa
+except ImportError:
     pass
